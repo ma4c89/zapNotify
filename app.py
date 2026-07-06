@@ -5,18 +5,18 @@ import webbrowser
 from time import sleep
 import pyautogui
 
-webbrowser.open('https://web.whatsapp.com/') #vai abir o whatsapp web
-time.sleep(30) # tempo para fazer login
+webbrowser.open('https://web.whatsapp.com/') 
+time.sleep(30) 
 
 workbook = openpyxl.load_workbook("teste.xlsx") # nome da planilha
-pagina_clientes = workbook["Planilha3"]  # nome da aba  
+pagina_clientes = workbook["cliente"]  # nome da aba  
 
 # Vai ler os dados da planilha por linha
 for linha in pagina_clientes.iter_rows(min_row=2):
 
     nome = linha[1].value
  
-    # Ignora linhas vazias
+
     if nome is None:
         continue
 
